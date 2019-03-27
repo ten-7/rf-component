@@ -8,10 +8,31 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "start": "nodemon ./server/index.js",
+    "build": "webpack --watch -d",
+    "populate": "node populate.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.4.20",
+    "nodemon": "^1.18.10",
+    "path": "^0.12.7",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "chai": "^3.5.0",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "file-system": "^2.2.2",
+    "mocha": "2.3.3",
+    "sinon": "1.17.3"
   }
 }
