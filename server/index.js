@@ -17,14 +17,6 @@ app.listen(port, () => {
 app.get('/reviews', (req, res) => {
   // req.query.productId
 
-  fs.readFile(path.join(__dirname, "../dummydata.json"), (err, result) => {
-    if (err) {
-      console.error(err);
-    } else {
-      
-    }
-  })
-
   db.getReviewsByProductId(req.query.productId, (error, results) => {
     if (error) {
       console.error(error);

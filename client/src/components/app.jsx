@@ -1,23 +1,26 @@
 import React from 'react';
 import axios from 'axios';
+import ReviewList from './ReviewList.jsx'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      productId: 2
+      productId: 1,
+      reviews: []
     }
   }
 
   componentDidMount() {
-    console.log("we in this bitch")
-    axios.get('/reviews', {
+    axios.get('http://localhost:8000/reviews', {
       params: {
         productId: this.state.productId
       }
     })
       .then((results) => {
-        console.log("successful get request", results);
+        this.setState({
+          reviews: results.data
+        });
       })
       .catch((error) => {
         console.error(error);
@@ -26,7 +29,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>FLYING HIGH!</div>
+      <div>
+        <ReviewList reviews={this.state.reviews} />
+      </div>
     )
   }
 }
