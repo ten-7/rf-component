@@ -12,7 +12,9 @@ class App extends React.Component {
   componentDidMount() {
     console.log("we in this bitch")
     axios.get('/reviews', {
-      productId: this.state.productId
+      params: {
+        productId: this.state.productId
+      }
     })
       .then((results) => {
         console.log("successful get request", results);
