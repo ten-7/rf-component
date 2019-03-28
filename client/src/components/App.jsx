@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import ReviewList from './ReviewList.jsx'
+import ReviewList from './ReviewList.jsx';
+import CommentInput from './CommentInput.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -27,9 +28,24 @@ class App extends React.Component {
       });
   }
 
+  handleChange (event) {
+    event.preventDefault();
+
+    this.setState({ 
+      [event.target.name]: event.target.value 
+    });
+  }
+
+  addComment (event) {
+    event.preventDefault();
+
+    
+  }
+
   render() {
     return (
       <div>
+        <CommentInput />
         <ReviewList reviews={this.state.reviews} />
       </div>
     )
