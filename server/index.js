@@ -26,3 +26,7 @@ app.get('/reviews', (req, res) => {
     }
   });
 });
+
+app.post('/postReview', (req, res) => {
+  
+});
