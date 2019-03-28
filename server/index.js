@@ -28,5 +28,12 @@ app.get('/reviews', (req, res) => {
 });
 
 app.post('/postReview', (req, res) => {
-  
+  db.postReview(req.body, (error, result) => {
+    if (error) {
+      console.error(error);
+      res.end();
+    } else {
+      res.send(result);
+    }
+  })
 });

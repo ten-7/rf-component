@@ -36,16 +36,28 @@ class App extends React.Component {
     });
   }
 
-  addComment (event) {
-    event.preventDefault();
+  postReview (newReview) {
+    newReview.likes = 0;
+    newReview.dislikes = 0;
+    newReview.productId = this.state.productId;
 
-
+    axios.post('http://localhost:8000/postReview', newReview)
+      .then((response) => {
+        const updatedReviews = this.state.reviews;
+        updatedReviews.unshift(newReview);
+        this.setState({
+          reviews: updatedReviews
+        });
+      })
+      .catch((error) => {
+        alert('Something happened when posting your review :(');
+      });
   }
 
   render() {
     return (
       <div>
-        <NewReviewInput />
+        <NewReviewInput postReview={this.postReview.bind(this)}/>
         <ReviewList reviews={this.state.reviews} />
       </div>
     )
