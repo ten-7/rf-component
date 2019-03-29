@@ -72,7 +72,7 @@ class NewReviewInput extends React.Component {
 
   render () {
     return (
-      <div name="newReviewInput">
+      <div id="newReviewInput">
         <input name="username" placeholder="Your Name" onChange={event => this.handleChange(event)}></input>
         <span> Score: </span>
         <span id="star1" onClick={(event) => {this.handleScoreChange(event, 1)}}> [0]</span>

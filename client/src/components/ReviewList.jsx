@@ -1,9 +1,12 @@
 import React from 'react';
+import ReviewListEntry from './ReviewListEntry.jsx';
 
 const ReviewList = (props) => {
   return (
     <div className="reviewList">
-      Chateauneuf du Pape
+      {props.reviews.map((review, index) => (
+        <ReviewListEntry review={review} index={index}/>
+      ))}
     </div>
   )
 }
