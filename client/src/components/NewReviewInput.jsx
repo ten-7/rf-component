@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import StarRatings from 'react-star-ratings';
 
 class NewReviewInput extends React.Component {
   constructor (props) {
@@ -27,20 +27,20 @@ class NewReviewInput extends React.Component {
   }
 
 
-  handleScoreChange (event, newScore) {
-    event.preventDefault();
+  handleScoreChange (newScore) {
+    // event.preventDefault();
 
     this.setState({
       score: newScore
     });
 
-    for(let i = 1; i <= 5; i++) {
-      if (i <= newScore) {
-        document.getElementById(`star${i}`).innerHTML = " [*]";
-      } else {
-        document.getElementById(`star${i}`).innerHTML = " [0]";
-      }
-    }
+    // for(let i = 1; i <= 5; i++) {
+    //   if (i <= newScore) {
+    //     document.getElementById(`star${i}`).innerHTML = " [*]";
+    //   } else {
+    //     document.getElementById(`star${i}`).innerHTML = " [0]";
+    //   }
+    // }
   }
 
   isValidReview(event, newReview) {
@@ -75,11 +75,13 @@ class NewReviewInput extends React.Component {
       <div id="newReviewInput">
         <input name="username" placeholder="Your Name" onChange={event => this.handleChange(event)}></input>
         <span> Score: </span>
-        <span id="star1" onClick={(event) => {this.handleScoreChange(event, 1)}}> [0]</span>
-        <span id="star2" onClick={(event) => {this.handleScoreChange(event, 2)}}> [0]</span>
-        <span id="star3" onClick={(event) => {this.handleScoreChange(event, 3)}}> [0]</span>
-        <span id="star4" onClick={(event) => {this.handleScoreChange(event, 4)}}> [0]</span>
-        <span id="star5" onClick={(event) => {this.handleScoreChange(event, 5)}}> [0]</span><br />
+        <StarRatings rating={this.state.score} 
+                    starRatedColor="a00000" 
+                    starHoverColor="a00000"
+                    changeRating={this.handleScoreChange.bind(this)} 
+                    numberOfStars={5} 
+                    name='score'
+                    starDimension="20px"/><br />
         <textarea rows="5" cols="50" name="body" placeholder="Write a Review" onChange={event => this.handleChange(event)}></textarea><br />
         <span onClick={event => this.setProCon(event)} id="reliability"> P</span>
         <span onClick={event => this.setProCon(event)} id="durability"> P</span>

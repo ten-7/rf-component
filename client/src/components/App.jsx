@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      productId: 2,
+      productId: Math.floor(Math.random()*100)+1,
       reviews: []
     }
   }
@@ -74,7 +74,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="reviewComponent">
         <NewReviewInput postReview={this.postReview.bind(this)}/>
         <ReviewList reviews={this.state.reviews} changeLikeDislike={this.incrementLikesAndDislikes.bind(this)}/>
       </div>

@@ -17,8 +17,6 @@ app.listen(port, () => {
 app.get('/reviews', (req, res) => {
   // req.query.productId
 
-  fs.readFile(path.join(__dirname, "../dummydata.json"))
-
   db.getReviewsByProductId(req.query.productId, (error, results) => {
     if (error) {
       console.error(error);
@@ -41,7 +39,6 @@ app.post('/postReview', (req, res) => {
 });
 
 app.put('/reviews/update', (req, res) => {
-  console.log(req.body);
   db.updateReview(req.body, (error, result) => {
     if(error) {
       console.error(error);
