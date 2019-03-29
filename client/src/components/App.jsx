@@ -28,6 +28,24 @@ class App extends React.Component {
       });
   }
 
+  incrementLikesAndDislikes (event, reviewId, type) {
+    event.preventDefault();
+
+    const updatedReviews = this.state.reviews;
+
+    updatedReviews[reviewId][type]++;
+
+    axios.put("http://localhost:8000/reviews/update", updatedReviews[reviewId])
+      .then((result) => {
+        this.setState({
+          reviews: updatedReviews
+        })
+      })
+      .catch((error) => {
+        alert('something went wrong!')
+      })
+  }
+
   handleChange (event) {
     event.preventDefault();
 
@@ -58,7 +76,7 @@ class App extends React.Component {
     return (
       <div>
         <NewReviewInput postReview={this.postReview.bind(this)}/>
-        <ReviewList reviews={this.state.reviews} />
+        <ReviewList reviews={this.state.reviews} changeLikeDislike={this.incrementLikesAndDislikes.bind(this)}/>
       </div>
     )
   }

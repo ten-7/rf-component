@@ -20,7 +20,8 @@ const repoSchema = mongoose.Schema({
   },
   likes: Number,
   dislikes: Number,
-  productId: Number
+  productId: Number,
+  reviewId: Number
 });
 
 const Repo = mongoose.model("Repo", repoSchema);
@@ -49,4 +50,15 @@ const postReview = (data, callback) => {
   });
 }
 
-module.exports = { postReview, getReviewsByProductId };
+const updateReview = (data, callback) => {
+  Repo.updateOne({ _id: data._id }, data, (error, response) => {
+    if (error) {
+      console.error(error);
+      callback(error);
+    } else {
+      callback(null, response)
+    }
+  });
+}
+
+module.exports = { postReview, getReviewsByProductId, updateReview };
