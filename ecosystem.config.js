@@ -10,7 +10,7 @@ module.exports = {
       key: '~/.ssh/AWS/JBeckerFEC.pem',
       ref: 'origin/master',
       repo: 'https://github.com/axe-center/JB-Review-Component.git',
-      path: '/JB-Review-Component',
+      path: '/home/ubuntu/ReviewComponent',
       'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
     }
   }
