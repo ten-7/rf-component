@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/reviews');
+require('dotenv').config();
+mongoose.connect(`mongodb+srv://Aikeus:${process.env.MONGO_PW}@cluster0-wp7g3.mongodb.net/reviews?retryWrites=true`);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, "Database connection error"));
