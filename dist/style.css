@@ -1,6 +1,17 @@
 .reviewComponent {
-  width: 80%;
+  text-align: center;
   margin: auto;
   border: gray 2px;
   border-width: 3px;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.submitBtn {
+  background: #c9c9c9;
+  width: 30px;
+  text-align: center;
+  position: relative
 }

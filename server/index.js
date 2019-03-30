@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('dist'))
 app.use(express.json());
 
-let port = process.env.PORT || 8000;
+let port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`The army of ${port} has arrived!`);

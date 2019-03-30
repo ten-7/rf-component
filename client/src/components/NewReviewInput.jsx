@@ -88,7 +88,7 @@ class NewReviewInput extends React.Component {
         <span onClick={event => this.setProCon(event)} id="looks"> P</span>
         <span onClick={event => this.setProCon(event)} id="performance"> P</span>
         <span onClick={event => this.setProCon(event)} id="value"> P</span>
-        <div onClick={(event) => {this.isValidReview(event, this.state)}}>corn</div>
+        <div className="submitBtn btn" onClick={(event) => {this.isValidReview(event, this.state)}}>corn</div>
       </div>
     )
   }
