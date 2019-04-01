@@ -10,7 +10,8 @@
   "scripts": {
     "start": "nodemon ./server/index.js",
     "build": "webpack --watch -d",
-    "populate": "node populate.js"
+    "populate": "node populate.js",
+    "node": "node ./server/index.js"
   },
   "dependencies": {
     "axios": "^0.18.0",

@@ -51,7 +51,8 @@ app.put('/reviews/update', (req, res) => {
 })
 
 app.post('/secret', (req, res) => {
-  req.body.map(review => {
+  const data = JSON.parse(req.body)
+  data.map(review => {
     db.postReview(review, (err, response) => {
       if (error) {
         console.error(error);
