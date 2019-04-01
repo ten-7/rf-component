@@ -29,18 +29,9 @@ class NewReviewInput extends React.Component {
 
   handleScoreChange (newScore) {
     // event.preventDefault();
-
     this.setState({
       score: newScore
     });
-
-    // for(let i = 1; i <= 5; i++) {
-    //   if (i <= newScore) {
-    //     document.getElementById(`star${i}`).innerHTML = " [*]";
-    //   } else {
-    //     document.getElementById(`star${i}`).innerHTML = " [0]";
-    //   }
-    // }
   }
 
   isValidReview(event, newReview) {
