@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-mongoose.connect(`mongodb+srv://Aikeus:${process.env.MONGO_PW}@cluster0-wp7g3.mongodb.net/reviews?retryWrites=true`);
+const uri = `mongodb+srv://Aikeus:${process.env.MONGO_PW}@cluster0-wp7g3.mongodb.net/Reviews?retryWrites=true`;
+mongoose.connect(uri, {useNewUrlParser: true});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, "Database connection error"));
@@ -25,7 +26,7 @@ const repoSchema = mongoose.Schema({
   reviewId: Number
 });
 
-const Repo = mongoose.model("Repo", repoSchema);
+const Repo = mongoose.model("Reviews", repoSchema);
 
 const getReviewsByProductId = (selectedId, callback) => {
   Repo.find({ productId: selectedId }, (err, result) => {
