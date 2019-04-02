@@ -12,17 +12,9 @@ app.use(cors());
 
 let port = process.env.PORT || 3000;
 
-app.listen(port, (err, result) => {
-  if (err) {
-    console.error(err);
-  } else {
-  console.log(`The army of ${port} has arrived!`);
-  }
-});
-
 app.get('/reviews', (req, res) => {
   // req.query.productId
-
+  
   db.getReviewsByProductId(req.query.productId, (error, results) => {
     if (error) {
       console.error(error);
@@ -68,3 +60,11 @@ app.post('/secret', (req, res) => {
     })
   })
 })
+
+app.listen(port, (err, result) => {
+  if (err) {
+    console.error(err);
+  } else {
+  console.log(`The army of ${port} has arrived!`);
+  }
+});
