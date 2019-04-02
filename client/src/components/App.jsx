@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/reviews', {
+    axios.get('localhost:3000/reviews', {
       params: {
         productId: this.state.productId
       }
@@ -35,7 +35,7 @@ class App extends React.Component {
 
     updatedReviews[reviewId][type]++;
 
-    axios.put("/reviews/update", updatedReviews[reviewId])
+    axios.put("localhost:3000/reviews/update", updatedReviews[reviewId])
       .then((result) => {
         this.setState({
           reviews: updatedReviews
@@ -59,7 +59,7 @@ class App extends React.Component {
     newReview.dislikes = 0;
     newReview.productId = this.state.productId;
 
-    axios.post('/postReview', newReview)
+    axios.post('localhost:3000/postReview', newReview)
       .then((response) => {
         const updatedReviews = this.state.reviews;
         updatedReviews.unshift(newReview);
