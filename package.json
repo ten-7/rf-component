@@ -11,7 +11,8 @@
     "start": "nodemon ./server/index.js",
     "build": "webpack --watch -d",
     "populate": "node populate.js",
-    "node": "node ./server/index.js"
+    "node": "node ./server/index.js",
+    "restart": "pm2 startOrRestart ecosystem.config.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
