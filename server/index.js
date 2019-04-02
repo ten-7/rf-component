@@ -2,16 +2,22 @@ const express = require('express');
 const db = require('../database/db.js');
 const fs = require('file-system');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 
 app.use(express.static('dist'))
 app.use(express.json());
+app.use(cors());
 
 let port = process.env.PORT || 3000;
 
-app.listen(port, () => {
+app.listen(port, (err, result) => {
+  if (err) {
+    console.error(err);
+  } else {
   console.log(`The army of ${port} has arrived!`);
+  }
 });
 
 app.get('/reviews', (req, res) => {
