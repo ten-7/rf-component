@@ -53,8 +53,8 @@ app.put('/reviews/update', (req, res) => {
 app.post('/secret', (req, res) => {
   req.body.map(review => {
     db.postReview(review, (err, response) => {
-      if (error) {
-        console.error(error);
+      if (err) {
+        console.error(err);
       } else {
         console.log('success');
       }
