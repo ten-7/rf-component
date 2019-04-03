@@ -1,4 +1,5 @@
 import React from 'react';
+import StarRatings from 'react-star-ratings';
 
 const ReviewListEntry = (props) => {
   let id = `entry${props.index}`
@@ -6,7 +7,10 @@ const ReviewListEntry = (props) => {
     <div id={id} className="entry">
       <div>
         <span>{props.review.username}</span>
-        <span> | {props.review.score}</span>
+        <span> | <StarRatings 
+                    rating={props.review.score} 
+                    starRatedColor="a00000"
+                    starDimension="10px"/></span>
       </div>
       <div>
         {props.review.body}
