@@ -1,7 +1,5 @@
 const express = require('express');
 const db = require('../database/db.js');
-const fs = require('file-system');
-const path = require('path');
 const cors = require('cors');
 
 const app = express();
