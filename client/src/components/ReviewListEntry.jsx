@@ -9,8 +9,8 @@ const ReviewListEntry = (props) => {
         <span>{props.review.username}</span>
         <span> | <StarRatings 
                     rating={props.review.score} 
-                    starRatedColor="red"
-                    starDimension="10px"/></span>
+                    starRatedColor="orange"
+                    starDimension="15px"/></span>
       </div>
       <div>
         {props.review.body}

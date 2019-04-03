@@ -67,8 +67,8 @@ class NewReviewInput extends React.Component {
         <input name="username" placeholder="Your Name" onChange={event => this.handleChange(event)}></input>
         <span> Score: </span>
         <StarRatings rating={this.state.score} 
-                    starRatedColor="a00000" 
-                    starHoverColor="a00000"
+                    starRatedColor="orange" 
+                    starHoverColor="orange"
                     changeRating={this.handleScoreChange.bind(this)} 
                     numberOfStars={5} 
                     name='score'
