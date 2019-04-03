@@ -14,7 +14,6 @@ let port = process.env.PORT || 3000;
 
 app.get('/reviews', (req, res) => {
   // req.query.productId
-  
   db.getReviewsByProductId(req.query.productId, (error, results) => {
     if (error) {
       console.error(error);
