@@ -10,7 +10,7 @@ for (let i = 0; i < 250; i++) {
   const review = {}
   review.username = names[Math.floor(Math.random()*names.length)];
   review.body = body1[Math.floor(Math.random()*body1.length)]+' '+body2[Math.floor(Math.random()*body2.length)]+', '+body3[Math.floor(Math.random()*body3.length)];
-  review.score = Math.floor(Math.random()*5) + 1;
+  review.score = Math.ceil(Math.random()*5);
   review.proscons = {
     reliability: !!(Math.floor(Math.random()*2)),
     durability: !!(Math.floor(Math.random()*2)),
