@@ -20,7 +20,7 @@ const ReviewListEntry = (props) => {
         <hr className="subcomment-div"/>
       <div>
         <span className="likes" onClick={(event) => { props.changeLikeDislike(event, props.index, "likes") }}>Likes: {props.review.likes}</span>
-        <ThumbDown />
+        {/* <ThumbDown /> */}
         <span className="dislikes" onClick={(event) => { props.changeLikeDislike(event, props.index, "dislikes") }}> | Dislikes: {props.review.dislikes}</span>
       </div>
       <hr className="comment-div"/>
