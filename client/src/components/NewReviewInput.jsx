@@ -50,14 +50,19 @@ class NewReviewInput extends React.Component {
     let newProsCons = this.state.proscons;
     newProsCons[event.target.id] = !newProsCons[event.target.id];
 
+    let newString = event.target.id;
+    newString = newString.charAt(0).toUpperCase() + newString.slice(1);
+
+    console.log(newProsCons, event.target.id);
+
     this.setState({ 
       proscons: newProsCons
     });
 
     if(newProsCons[event.target.id]) {
-      event.target.innerHTML = " P";
+      event.target.innerHTML = `${newString}: Pro`;
     } else {
-      event.target.innerHTML = " C";
+      event.target.innerHTML = `${newString}: Con`;
     }
   }
 
@@ -74,12 +79,12 @@ class NewReviewInput extends React.Component {
                     name='score'
                     starDimension="20px"/><br />
         <textarea rows="5" cols="50" name="body" placeholder="Write a Review" onChange={event => this.handleChange(event)}></textarea><br />
-        <span onClick={event => this.setProCon(event)} id="reliability"> P</span>
-        <span onClick={event => this.setProCon(event)} id="durability"> P</span>
-        <span onClick={event => this.setProCon(event)} id="looks"> P</span>
-        <span onClick={event => this.setProCon(event)} id="performance"> P</span>
-        <span onClick={event => this.setProCon(event)} id="value"> P</span>
-        <div className="submitBtn btn" onClick={(event) => {this.isValidReview(event, this.state)}}>corn</div>
+          <div onClick={event => this.setProCon(event)} id="reliability">Reliability: Pro</div>
+          <div onClick={event => this.setProCon(event)} id="durability">Durability: Pro</div>
+          <div onClick={event => this.setProCon(event)} id="looks">Looks: Pro</div>
+          <div onClick={event => this.setProCon(event)} id="performance">Performance: Pro</div>
+          <div onClick={event => this.setProCon(event)} id="value">Value: Pro</div>
+        <div className="submitBtn btn" onClick={(event) => {this.isValidReview(event, this.state)}}>Submit</div>
       </div>
     )
   }

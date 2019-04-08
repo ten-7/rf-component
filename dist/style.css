@@ -1,17 +1,26 @@
-.reviewComponent {
-  text-align: center;
-  margin: auto;
-  border: gray 2px;
-  border-width: 3px;
-}
 
 .btn {
   cursor: pointer;
 }
 
-.submitBtn {
-  background: #c9c9c9;
-  width: 30px;
-  text-align: center;
-  position: relative
+.background-left {
+  position: fixed;
+  background-color: #a8a8a8;
+  width: 12.5%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-right-style: dotted;
+  border-color: #a8a8a8
+}
+
+.background-right {
+  position: fixed;
+  background-color: #a8a8a8;
+  width: 12.5%;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border-left-style: dotted;
+  border-color: #a8a8a8
 }
