@@ -3,7 +3,7 @@ import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
 import NewReviewInput from './NewReviewInput.jsx';
 import Grid from '@material-ui/core/Grid';
-
+import Typography from '@material-ui/core/Typography';
 
 class App extends React.Component {
   constructor(props) {
@@ -76,7 +76,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="reviewComponent">
+      <Typography className="reviewComponent">
         <Grid
           container={true}
           component='div'
@@ -91,7 +91,7 @@ class App extends React.Component {
           <NewReviewInput postReview={this.postReview.bind(this)}/>
           <ReviewList reviews={this.state.reviews} changeLikeDislike={this.incrementLikesAndDislikes.bind(this)}/>
         </Grid>
-      </div>
+      </Typography>
     )
   }
 }
