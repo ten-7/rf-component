@@ -1,9 +1,9 @@
 const fs = require('fs');
 
-const names = ["nfredman","zubair","jayell","jaybee","jblaize","llllinden","cornholio","AusAnder"];
-const body1 = ["This was the", "I just got the most", "We could call it a", "Heavenly"];
-const body2 = ["best axe", "worst product ever", "wonderful work of art", "horrendous attempt", "quizzical piece","something something something darkside"];
-const body3 = ["highly recommend.", "10/10, absolutely horrible", "I didn't know I could love to hate something.", "donuts!", "puppies are soooooooooo cute!", "lmao, nonsense!"]
+const names = ["nfredman","zubair","jayell","jaybee","jblaize","llllinden","cornholio","AusAnder","JayKay"];
+const body1 = ["This was the", "I just got the most", "We could call it a", "Heavenly", "I'm just adding random words"];
+const body2 = ["best axe", "worst product ever", "wonderful work of art", "horrendous attempt", "quizzical piece","something something something darkside", "but who are we to judge","this is dummy data, please ignore","this is going to be the most important thing you'll read all day"];
+const body3 = ["highly recommend.", "10/10, absolutely horrible", "I didn't know I could love to hate something.", "donuts!", "puppies are soooooooooo cute!", "lmao, nonsense!", "sorta felt like I was going places", "definitely recommend for horror-movie villains, not that I would know"]
 const theData = [];
 
 for (let i = 0; i < 250; i++) {

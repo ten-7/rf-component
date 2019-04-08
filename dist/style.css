@@ -5,22 +5,32 @@
 
 .background-left {
   position: fixed;
-  background-color: #a8a8a8;
+  background-color: #b0b0b0;
   width: 12.5%;
   left: 0;
   top: 0;
   height: 100%;
   border-right-style: dotted;
-  border-color: #a8a8a8
+  border-color: #b0b0b0
 }
 
 .background-right {
   position: fixed;
-  background-color: #a8a8a8;
+  background-color: #b0b0b0;
   width: 12.5%;
   right: 0;
   top: 0;
   height: 100%;
   border-left-style: dotted;
-  border-color: #a8a8a8
+  border-color: #b0b0b0
+}
+
+.submitBtn {
+  width: 10%;
+  position: relative;
+  text-align: center;
+  background-color: red;
+  align-self: center;
+  left: 45%;
+  color: #b0b0b0;
 }
