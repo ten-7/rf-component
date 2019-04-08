@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      productId: Math.floor(Math.random()*100)+1,
+      productId: 49,
       reviews: []
     }
   }

@@ -32,5 +32,24 @@
   background-color: red;
   align-self: center;
   left: 45%;
-  color: #b0b0b0;
+  color: #e0e0e0;
+  border: black 1px;
+  border-style: solid;
+}
+
+.component-div {
+  width: 70%;
+}
+
+.comment-div {
+  width: 55%;
+}
+
+.subcomment-div {
+  width: 15%;
+}
+
+.body {
+  /* width: 60%; */
+  left: 50%;
 }
