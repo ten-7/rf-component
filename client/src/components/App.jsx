@@ -33,6 +33,8 @@ class App extends React.Component {
   incrementLikesAndDislikes (event, reviewId, type) {
     event.preventDefault();
 
+    console.log("OMGWTFBBQ")
+
     const updatedReviews = this.state.reviews;
 
     updatedReviews[reviewId][type]++;
@@ -76,7 +78,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Typography className="reviewComponent">
+      <div className="reviewComponent">
         <Grid
           container={true}
           component='div'
@@ -91,7 +93,7 @@ class App extends React.Component {
           <NewReviewInput postReview={this.postReview.bind(this)}/>
           <ReviewList reviews={this.state.reviews} changeLikeDislike={this.incrementLikesAndDislikes.bind(this)}/>
         </Grid>
-      </Typography>
+      </div>
     )
   }
 }
