@@ -1,9 +1,9 @@
 import React from 'react';
 import StarRatings from 'react-star-ratings';
-import ThumbDown from '@material-ui/icons/ThumbDown';
 
 const ReviewListEntry = (props) => {
   let id = `entry${props.index}`
+
   return (
     <div id={id} className="entry">
       <div>
@@ -20,7 +20,6 @@ const ReviewListEntry = (props) => {
         <hr className="subcomment-div"/>
       <div>
         <span className="likes" onClick={(event) => { props.changeLikeDislike(event, props.index, "likes") }}>Likes: {props.review.likes}</span>
-        {/* <ThumbDown /> */}
         <span className="dislikes" onClick={(event) => { props.changeLikeDislike(event, props.index, "dislikes") }}> | Dislikes: {props.review.dislikes}</span>
       </div>
       <hr className="comment-div"/>

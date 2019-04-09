@@ -112,12 +112,12 @@ class NewReviewInput extends React.Component {
                     starDimension="20px"/>
         <br />
         <textarea rows="5" cols="50" name="body" placeholder="Write a Review" onChange={event => this.handleChange(event)}></textarea><br />
-          <div onClick={event => this.setProCon(event)} id="reliability">Reliability: Pro</div>
-          <div onClick={event => this.setProCon(event)} id="durability">Durability: Pro</div>
-          <div onClick={event => this.setProCon(event)} id="looks">Looks: Pro</div>
-          <div onClick={event => this.setProCon(event)} id="performance">Performance: Pro</div>
-          <div onClick={event => this.setProCon(event)} id="value">Value: Pro</div>
-        <div className="submitBtn btn" onClick={(event) => {this.isValidReview(event, this.state)}}>Submit</div>
+          <div title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="reliability">Reliability: Pro</div>
+          <div title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="durability">Durability: Pro</div>
+          <div title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="looks">Looks: Pro</div>
+          <div title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="performance">Performance: Pro</div>
+          <div title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="value">Value: Pro</div>
+        <div className="submitBtn btn" title="Submit Review" onClick={(event) => {this.isValidReview(event, this.state)}}>Submit</div>
         <hr className="component-div" />
       </div>
     )

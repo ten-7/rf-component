@@ -33,8 +33,6 @@ class App extends React.Component {
   incrementLikesAndDislikes (event, reviewId, type) {
     event.preventDefault();
 
-    console.log("OMGWTFBBQ")
-
     const updatedReviews = this.state.reviews;
 
     updatedReviews[reviewId][type]++;
