@@ -16,6 +16,7 @@ class App extends React.Component {
 
   componentDidMount() {
     window.addEventListener('productId', (e) => {
+      console.log("event listener")
       this.setState({
         productId: e.detail
       })
@@ -82,7 +83,7 @@ class App extends React.Component {
 
   render() {
     return this.state.reviews.length ? (
-      <div className="reviewComponent">
+      <div className="review-component">
         <Grid
           container={true}
           component='div'
@@ -99,7 +100,7 @@ class App extends React.Component {
         </Grid>
       </div>
     ) : (
-      <div className="reviewComponent">
+      <div className="review-component">
         <Grid
           container={true}
           component='div'
