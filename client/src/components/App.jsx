@@ -14,10 +14,6 @@ class App extends React.Component {
     }
   }
 
-  /*
-  TODO: Add a sorter for an object called this.state.cachedReviews
-  */
-
   componentDidMount() {
     window.addEventListener('productId', (e) => {
       console.log("event listener here", e.detail);
