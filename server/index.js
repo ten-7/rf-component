@@ -10,7 +10,7 @@ app.use(cors());
 
 let port = process.env.PORT || 3000;
 
-app.get('/reviews', (req, res) => {
+app.get('/api/reviews/reviews', (req, res) => {
   // req.query.productId
   db.getReviewsByProductId(req.query.productId, (error, results) => {
     if (error) {
@@ -22,7 +22,7 @@ app.get('/reviews', (req, res) => {
   });
 });
 
-app.post('/postReview', (req, res) => {
+app.post('/api/reviews/postReview', (req, res) => {
   db.postReview(req.body, (error, result) => {
     if (error) {
       console.error(error);
@@ -33,7 +33,7 @@ app.post('/postReview', (req, res) => {
   })
 });
 
-app.put('/reviews/update', (req, res) => {
+app.put('/api/reviews/update', (req, res) => {
   db.updateReview(req.body, (error, result) => {
     if(error) {
       console.error(error);
@@ -45,7 +45,7 @@ app.put('/reviews/update', (req, res) => {
   })
 })
 
-app.post('/secret', (req, res) => {
+app.post('api/reviews/secret', (req, res) => {
   req.body.map(review => {
     db.postReview(review, (err, response) => {
       if (err) {
