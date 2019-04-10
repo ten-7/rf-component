@@ -10,9 +10,14 @@ class App extends React.Component {
     super(props)
     this.state = {
       productId: 1,
-      reviews: []
+      reviews: [],
+      cachedReviews: {}
     }
   }
+
+  /*
+  TODO: Add a sorter for an object called this.state.cachedReviews
+  */
 
   componentDidMount() {
     window.addEventListener('productId', (e) => {
@@ -22,39 +27,22 @@ class App extends React.Component {
       })
     })
 
-    // axios.get('http://18.219.116.84/api/reviews/reviews', {
-    //   params: {
-    //     productId: this.state.productId
-    //   }
-    // })
-    //   .then((results) => {
-    //     console.log("aqui")
-    //     this.setState({
-    //       reviews: results.data
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
-  }
-
-  componentDidUpdate() {
     axios.get('http://18.219.116.84/api/reviews/reviews', {
       params: {
         productId: this.state.productId
       }
     })
       .then((results) => {
-        console.log("didUpdate")
+        console.log("aqui")
         this.setState({
-          reviews: results.data
+          cachedReviews: results.data
         });
       })
       .catch((error) => {
         console.error(error);
       });
   }
-
+  
   incrementLikesAndDislikes (event, reviewId, type) {
     event.preventDefault();
 
