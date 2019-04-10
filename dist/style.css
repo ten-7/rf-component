@@ -3,7 +3,9 @@
   cursor: pointer;
 }
 
-.rev
+.user {
+  font-size: 30px;
+}
 
 .submitBtn {
   width: 10%;
@@ -16,7 +18,7 @@
 }
 
 .component-div {
-  width: 70%;
+  width: 100%;
 }
 
 .comment-div {
@@ -26,8 +28,13 @@
 .subcomment-div {
   width: 15%;
 }
-
+/* 
 .body {
   width: 60%;
   margin-left: 20%;
+} */
+
+.review-component {
+  margin-left: 10vw;
+  margin-right: 10vw;
 }

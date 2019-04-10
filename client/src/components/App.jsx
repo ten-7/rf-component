@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      productId: Math.ceil(Math.random() * 100),
+      productId: 1,
       reviews: []
     }
   }
@@ -100,7 +100,20 @@ class App extends React.Component {
       </div>
     ) : (
       <div className="reviewComponent">
-        <Typography>Loading, please wait...</Typography>
+        <Grid
+          container={true}
+          component='div'
+          justify='space-evenly'
+          direction='column'
+          spacing={8}
+          alightItems='center'
+          style={{
+            textAlign: "center"
+          }}
+          >
+          <NewReviewInput postReview={this.postReview.bind(this)}/>
+          <div className="reviewList">Nothing here yet!</div>
+        </Grid>
       </div>
     )
   }
