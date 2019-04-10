@@ -38,6 +38,23 @@ class App extends React.Component {
       });
   }
 
+  componentDidUpdate() {
+    axios.get('http://18.219.116.84/api/reviews/reviews', {
+      params: {
+        productId: this.state.productId
+      }
+    })
+      .then((results) => {
+        console.log("aqui")
+        this.setState({
+          reviews: results.data
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
   incrementLikesAndDislikes (event, reviewId, type) {
     event.preventDefault();
 
