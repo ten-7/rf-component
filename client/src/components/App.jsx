@@ -28,6 +28,7 @@ class App extends React.Component {
       }
     })
       .then((results) => {
+        console.log("aqui")
         this.setState({
           reviews: results.data
         });
