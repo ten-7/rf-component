@@ -3,7 +3,7 @@ import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
 import NewReviewInput from './NewReviewInput.jsx';
 import Grid from '@material-ui/core/Grid';
-// import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,6 +28,12 @@ class App extends React.Component {
       .catch((error) => {
         console.error(error);
       });
+
+    window.addEventListener('productId', (e) => {
+      this.setState({
+        productId: e.detail
+      })
+    })
   }
 
   incrementLikesAndDislikes (event, reviewId, type) {
@@ -75,7 +81,7 @@ class App extends React.Component {
   }
 
   render() {
-    return (
+    return this.state.reviews.length ? (
       <div className="reviewComponent">
         <Grid
           container={true}
@@ -91,6 +97,10 @@ class App extends React.Component {
           <NewReviewInput postReview={this.postReview.bind(this)}/>
           <ReviewList reviews={this.state.reviews} changeLikeDislike={this.incrementLikesAndDislikes.bind(this)}/>
         </Grid>
+      </div>
+    ) : (
+      <div className="reviewComponent">
+        <Typography>Loading, please wait...</Typography>
       </div>
     )
   }

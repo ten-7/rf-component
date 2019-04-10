@@ -54,8 +54,6 @@ class NewReviewInput extends React.Component {
     let newString = event.target.id;
     newString = newString.charAt(0).toUpperCase() + newString.slice(1);
 
-    console.log(newProsCons, event.target.id);
-
     this.setState({ 
       proscons: newProsCons
     });
