@@ -11,7 +11,6 @@ class App extends React.Component {
     this.state = {
       productId: 1,
       reviews: [],
-      cachedReviews: {}
     }
   }
 
@@ -24,6 +23,21 @@ class App extends React.Component {
       console.log("event listener here", e.detail);
       this.setState({
         productId: e.detail
+      }, () => {
+        axios.get('http://18.219.116.84/api/reviews/reviews', {
+          params: {
+            productId: this.state.productId
+          }
+        })
+          .then((results) => {
+            console.log("aqui")
+            this.setState({
+              reviews: results.data
+            });
+          })
+          .catch((error) => {
+            console.error(error);
+          });
       })
     })
 
@@ -35,14 +49,14 @@ class App extends React.Component {
       .then((results) => {
         console.log("aqui")
         this.setState({
-          cachedReviews: results.data
+          reviews: results.data
         });
       })
       .catch((error) => {
         console.error(error);
       });
   }
-  
+
   incrementLikesAndDislikes (event, reviewId, type) {
     event.preventDefault();
 
