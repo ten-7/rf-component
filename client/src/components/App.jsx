@@ -16,7 +16,7 @@ class App extends React.Component {
 
   componentDidMount() {
     window.addEventListener('productId', (e) => {
-      console.log("event listener here");
+      console.log("event listener here", e.detail);
       this.setState({
         productId: e.detail
       })
