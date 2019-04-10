@@ -6,7 +6,7 @@ module.exports = {
   deploy: {
     production: {
       user: 'ubuntu',
-      host: '13.59.172.250',
+      host: '18.219.116.84',
       key: '~/.ssh/AWS/JBeckerFEC.pem',
       ref: 'origin/master',
       repo: 'https://github.com/axe-center/JB-Review-Component.git',
