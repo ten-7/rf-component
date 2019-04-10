@@ -22,20 +22,20 @@ class App extends React.Component {
       })
     })
 
-    axios.get('http://18.219.116.84/api/reviews/reviews', {
-      params: {
-        productId: this.state.productId
-      }
-    })
-      .then((results) => {
-        console.log("aqui")
-        this.setState({
-          reviews: results.data
-        });
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    // axios.get('http://18.219.116.84/api/reviews/reviews', {
+    //   params: {
+    //     productId: this.state.productId
+    //   }
+    // })
+    //   .then((results) => {
+    //     console.log("aqui")
+    //     this.setState({
+    //       reviews: results.data
+    //     });
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
   }
 
   componentDidUpdate() {
@@ -45,7 +45,7 @@ class App extends React.Component {
       }
     })
       .then((results) => {
-        console.log("aqui")
+        console.log("didUpdate")
         this.setState({
           reviews: results.data
         });
