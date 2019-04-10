@@ -15,6 +15,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    window.addEventListener('productId', (e) => {
+      this.setState({
+        productId: e.detail
+      })
+    })
+
     axios.get('http://18.219.116.84/api/reviews/reviews', {
       params: {
         productId: this.state.productId
@@ -28,12 +34,6 @@ class App extends React.Component {
       .catch((error) => {
         console.error(error);
       });
-
-    window.addEventListener('productId', (e) => {
-      this.setState({
-        productId: e.detail
-      })
-    })
   }
 
   incrementLikesAndDislikes (event, reviewId, type) {
