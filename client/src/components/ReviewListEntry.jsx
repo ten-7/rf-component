@@ -1,6 +1,7 @@
 import React from 'react';
 import StarRatings from 'react-star-ratings';
-import { ThumbDown } from '@material-ui/icons/';
+import ThumbDown from '@material-ui/icons/ThumbDown';
+import ThumbUp from '@material-ui/icons/ThumbUp';
 import Typography from '@material-ui/core/Typography';
 
 const ReviewListEntry = (props) => {
@@ -21,9 +22,10 @@ const ReviewListEntry = (props) => {
       </div>
         <br />
       <div>
-        {/* <ThumbDown /> */}
-        <span className="likes" onClick={(event) => { props.changeLikeDislike(event, props.index, "likes") }}>Likes: {props.review.likes}</span>
-        <span className="dislikes" onClick={(event) => { props.changeLikeDislike(event, props.index, "dislikes") }}> | Dislikes: {props.review.dislikes}</span>
+        <span className="likes">Likes: {props.review.likes}</span>
+        <ThumbUp onClick={(event) => { props.changeLikeDislike(event, props.index, "likes") }} />
+        <span className="dislikes"> | Dislikes: {props.review.dislikes}</span>
+        <ThumbDown onClick={(event) => { props.changeLikeDislike(event, props.index, "dislikes") }}/>
       </div>
       <hr className="component-div"/>
     </div>
