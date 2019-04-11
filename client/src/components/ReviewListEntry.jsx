@@ -13,11 +13,11 @@ const ReviewListEntry = (props) => {
                     starRatedColor="orange"
                     starDimension="20px"/></span>
       </div>
-        <hr className="subcomment-div"/>
+        <hr align="left" className="subcomment-div"/>
       <div className="body">
         {props.review.body}
       </div>
-        <hr className="subcomment-div"/>
+        <hr align="left" className="subcomment-div"/>
       <div>
         <span className="likes" onClick={(event) => { props.changeLikeDislike(event, props.index, "likes") }}>Likes: {props.review.likes}</span>
         <span className="dislikes" onClick={(event) => { props.changeLikeDislike(event, props.index, "dislikes") }}> | Dislikes: {props.review.dislikes}</span>
