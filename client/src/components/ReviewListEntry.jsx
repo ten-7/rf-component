@@ -13,7 +13,8 @@ const ReviewListEntry = (props) => {
                     starRatedColor="orange"
                     starDimension="20px"/></span>
       </div>
-        <hr align="left" className="subcomment-div"/>
+        {/* <hr align="left" className="subcomment-div"/> */}
+        <br />
       <div className="body">
         {props.review.body}
       </div>
