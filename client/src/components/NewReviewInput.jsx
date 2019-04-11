@@ -115,7 +115,7 @@ class NewReviewInput extends React.Component {
           <div title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="looks">Looks: Pro</div>
           <div title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="performance">Performance: Pro</div>
           <div title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="value">Value: Pro</div>
-        <Typography className="submitBtn btn" title="Submit Review" onClick={(event) => {this.isValidReview(event, this.state)}}>Submit</Typography>
+        <div className="submitBtn btn" title="Submit Review" onClick={(event) => {this.isValidReview(event, this.state)}}>Submit</div>
         <hr className="component-div" />
       </div>
     )

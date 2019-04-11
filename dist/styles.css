@@ -27,8 +27,9 @@
   right: 85%;
 }
 
-.review-component {
+#review-component {
   margin-left: 10vw;
   margin-right: 10vw;
   margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }

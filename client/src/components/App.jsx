@@ -96,7 +96,7 @@ class App extends React.Component {
 
   render() {
     return this.state.reviews.length ? (
-      <div className="review-component">
+      <div id="review-component">
         <Grid
           container={true}
           component='div'
@@ -110,7 +110,7 @@ class App extends React.Component {
         </Grid>
       </div>
     ) : (
-      <div className="review-component">
+      <div id="review-component">
         <Grid
           container={true}
           component='div'
