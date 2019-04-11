@@ -24,7 +24,7 @@
 
 .subcomment-div {
   width: 15%;
-  justify-items: left;
+  align-self: left;
 }
 
 .review-component {
