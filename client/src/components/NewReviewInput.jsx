@@ -1,6 +1,6 @@
 import React from 'react';
 import StarRatings from 'react-star-ratings';
-import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
 class NewReviewInput extends React.Component {
   constructor (props) {
