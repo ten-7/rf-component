@@ -16,7 +16,6 @@ class App extends React.Component {
 
   componentDidMount() {
     window.addEventListener('productId', (e) => {
-      console.log("event listener here", e.detail);
       this.setState({
         productId: e.detail
       }, () => {
@@ -26,7 +25,6 @@ class App extends React.Component {
           }
         })
           .then((results) => {
-            console.log("aqui")
             this.setState({
               reviews: results.data
             });
@@ -43,7 +41,6 @@ class App extends React.Component {
       }
     })
       .then((results) => {
-        console.log("aqui")
         this.setState({
           reviews: results.data
         });
@@ -72,7 +69,7 @@ class App extends React.Component {
   }
 
   handleChange (event) {
-    event.preventDefault();
+    // event.preventDefault();
 
     this.setState({ 
       [event.target.name]: event.target.value 
