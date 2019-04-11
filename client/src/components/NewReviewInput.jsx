@@ -109,7 +109,7 @@ class NewReviewInput extends React.Component {
                     name='score'
                     starDimension="20px"/>
         <br />
-        <input rows="5" cols="50" name="body" placeholder="Write a Review" onChange={event => this.handleChange(event)}></input><br />
+        <textarea rows="5" cols="50" name="body" placeholder="Write a Review" onChange={event => this.handleChange(event)}></textarea><br />
           <div title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="reliability">Reliability: Pro</div>
           <div title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="durability">Durability: Pro</div>
           <div title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="looks">Looks: Pro</div>
