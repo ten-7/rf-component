@@ -4,6 +4,7 @@ import ReviewList from './ReviewList.jsx';
 import NewReviewInput from './NewReviewInput.jsx';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import '../styles.css';
 
 class App extends React.Component {
   constructor(props) {
