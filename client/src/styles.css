@@ -9,11 +9,17 @@
 
 .submitBtn {
   width: 10%;
+  font-size: 20px;
+  font-weight: bold;
   position: relative;
   text-align: center;
   background-color: #cd2418;
   color: white;
   left:45%;
+}
+
+.pro-con {
+  font-size: 20px;
 }
 
 .component-div {

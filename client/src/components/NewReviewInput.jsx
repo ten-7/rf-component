@@ -1,6 +1,19 @@
 import React from 'react';
 import StarRatings from 'react-star-ratings';
-import { Grid, Paper } from '@material-ui/core';
+import { Grid, Paper, Button } from '@material-ui/core';
+import { MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
+
+const styles = createMuiTheme({
+  paper: {
+    width: 5
+  },
+  root: {
+    flexgrow: 1
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
 
 class NewReviewInput extends React.Component {
   constructor (props) {
@@ -65,11 +78,12 @@ class NewReviewInput extends React.Component {
     }
   }
 
-  render () {
+  render (props) {
     return (
-      <div id="newReviewInput">
-        <Grid container>
-          <Grid item xs={12}>
+      <MuiThemeProvider theme = {styles}>
+      <div id="newReviewInput" >
+        <Grid container spacing={16}>
+          <Grid item xs={6}>
             <input name="username" placeholder="Your Name" onChange={event => this.handleChange(event)}></input>
             <span> Score: </span>
             <StarRatings rating={this.state.score} 
@@ -80,19 +94,23 @@ class NewReviewInput extends React.Component {
                         name='score'
                         starDimension="20px"/>
             <br />
-            <textarea rows="5" cols="50" name="body" placeholder="Write a Review" onChange={event => this.handleChange(event)}></textarea>
+            <textarea style={{width: "38.5vw", height: "114px"}} name="body" placeholder="Write a Review" onChange={event => this.handleChange(event)}></textarea>
           </Grid>
-          <Grid item xs={12}>
-            <span title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="reliability">Reliability: Pro</span><br />
-            <span title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="durability">Durability: Pro</span><br />
-            <span title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="looks">Looks: Pro</span><br />
-            <span title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="performance">Performance: Pro</span><br />
-            <span title="Toggle Pro/Con" className="btn" onClick={event => this.setProCon(event)} id="value">Value: Pro</span><br />
+          <Grid item xs={6}>
+          <Paper style={{height: '136px'}}>
+            <br/>
+            <span title="Toggle Pro/Con" className="btn pro-con" onClick={event => this.setProCon(event)} id="reliability">Reliability: Pro</span><br />
+            <span title="Toggle Pro/Con" className="btn pro-con" onClick={event => this.setProCon(event)} id="durability">Durability: Pro</span><br />
+            <span title="Toggle Pro/Con" className="btn pro-con" onClick={event => this.setProCon(event)} id="looks">Looks: Pro</span><br />
+            <span title="Toggle Pro/Con" className="btn pro-con" onClick={event => this.setProCon(event)} id="performance">Performance: Pro</span><br />
+            <span title="Toggle Pro/Con" className="btn pro-con" onClick={event => this.setProCon(event)} id="value">Value: Pro</span><br />
+          </Paper>
           </Grid>
         </Grid>
         <div className="submitBtn btn" title="Submit Review" onClick={(event) => {this.isValidReview(event, this.state)}}>Submit</div>
         <hr className="component-div" />
       </div>
+      </MuiThemeProvider>
     )
   }
 }
