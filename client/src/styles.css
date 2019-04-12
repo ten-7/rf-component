@@ -4,7 +4,7 @@
 }
 
 .user {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .submitBtn {
@@ -12,7 +12,8 @@
   position: relative;
   text-align: center;
   background-color: #cd2418;
-  color: #e0e0e0;
+  color: white;
+  left:45%;
 }
 
 .component-div {
