@@ -104,7 +104,6 @@ class App extends React.Component {
           justify='space-evenly'
           direction='column'
           spacing={8}
-          // alightItems='center'
           >
           <NewReviewInput postReview={this.postReview.bind(this)}/>
           <ReviewList reviews={this.state.reviews} changeLikeDislike={this.incrementLikesAndDislikes.bind(this)}/>
@@ -118,7 +117,6 @@ class App extends React.Component {
           justify='space-evenly'
           direction='column'
           spacing={8}
-          alightItems='center'
           style={{
             textAlign: "center"
           }}
