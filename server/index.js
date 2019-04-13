@@ -1,6 +1,8 @@
 const express = require('express');
 const db = require('../database/db.js');
 const cors = require('cors');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
 
@@ -46,7 +48,7 @@ app.put('/api/reviews/update', (req, res) => {
   })
 })
 
-app.post('api/reviews/secret', (req, res) => {
+app.post('/api/reviews/secret', (req, res) => {
   req.body.map(review => {
     db.postReview(review, (err, response) => {
       if (err) {
@@ -57,6 +59,17 @@ app.post('api/reviews/secret', (req, res) => {
       res.end();
     })
   })
+});
+
+app.get('/api/reviews/dbmerge', (req, res) => {
+  db.getAllReviews((err, results) => {
+    if (err) {
+      console.error(err);
+    } else {
+      res.send(results);
+    }
+  })
+  res.end();
 })
 
 app.listen(port, (err, result) => {

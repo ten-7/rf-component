@@ -38,6 +38,16 @@ const getReviewsByProductId = (selectedId, callback) => {
   });
 }
 
+const getAllReviews = (callback) => {
+  Repo.find((err, result) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, result)
+    }
+  })
+}
+
 const postReview = (data, callback) => {
   const newReview = new Repo(data);
 
@@ -63,4 +73,4 @@ const updateReview = (data, callback) => {
   });
 }
 
-module.exports = { postReview, getReviewsByProductId, updateReview };
+module.exports = { postReview, getReviewsByProductId, updateReview, getAllReviews };
