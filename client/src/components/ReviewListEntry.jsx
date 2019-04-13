@@ -15,10 +15,12 @@ const ReviewListEntry = (props) => {
         <div>
           <Paper style={{height: "25px"}}>
             <span className="user">{props.review.username}</span>
-            <span> | <StarRatings 
-                        rating={props.review.score} 
-                        starRatedColor="orange"
-                        starDimension="20px"/>
+            <span style={{float: "right", position: "relative"}}>
+              <StarRatings
+                rating={props.review.score} 
+                starRatedColor="orange"
+                starDimension="20px"
+                starSpacing="1px"/>
             </span>
           </Paper>
         </div>
