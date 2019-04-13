@@ -22,16 +22,24 @@ const ReviewListEntry = (props) => {
             </span>
           </Paper>
         </div>
-        <div>
-          <Paper>
-            <span className="likes">Likes: {props.review.likes}</span>
-            <ThumbUp style={{height: "15", width: "15", justifySelf: "right"}} onClick={(event) => { props.changeLikeDislike(event, props.index, "likes") }} />
-          </Paper>
-          <Paper>
-            <span className="dislikes">Dislikes: {props.review.dislikes}</span>
-            <ThumbDown style={{height: "15", width: "15"}} onClick={(event) => { props.changeLikeDislike(event, props.index, "dislikes") }}/>
-          </Paper>
-        </div>
+        <Grid container spacing={0}>
+          <Grid item xs={6}>
+            <Paper className="btn" onClick={(event) => { props.changeLikeDislike(event, props.index, "likes") }}>
+              <span className="likes">
+                <ThumbUp className="btn" style={{height: "15", width: "15", justifySelf: "right"}} />
+                <span className="likes-count">{props.review.likes}</span>
+              </span>
+            </Paper>
+          </Grid>
+          <Grid xs={6}>
+            <Paper className="btn" onClick={(event) => { props.changeLikeDislike(event, props.index, "dislikes") }}>
+              <span className="dislikes">
+                <ThumbDown style={{height: "15", width: "15"}}/>
+                <span className="dislikes-count">{props.review.dislikes}</span>
+              </span>
+            </Paper>
+          </Grid>
+        </Grid>
         </Paper>
       </Grid>
       <Grid item xs={9}>

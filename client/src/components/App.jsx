@@ -77,7 +77,7 @@ class App extends React.Component {
     });
   }
 
-  postReview (newReview) {
+  postReview (newReview, callback) {
     newReview.likes = 0;
     newReview.dislikes = 0;
     newReview.productId = this.state.productId;
@@ -89,6 +89,7 @@ class App extends React.Component {
         this.setState({
           reviews: updatedReviews
         });
+        callback();
       })
       .catch((error) => {
         alert('Something happened when posting your review :(');

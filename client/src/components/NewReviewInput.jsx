@@ -54,7 +54,9 @@ class NewReviewInput extends React.Component {
     if(newReview.score === 0 || newReview.username === "" || newReview.body === "") {
       alert("Please fully complete your review!");
     } else {
-      this.props.postReview(newReview);
+      this.props.postReview(newReview, () => {
+        
+      });
     }
   }
 
