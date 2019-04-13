@@ -36,7 +36,7 @@ const ReviewListEntry = (props) => {
             <ThumbUp onClick={(event) => { props.changeLikeDislike(event, props.index, "likes") }} />
           </Paper>
           <Paper>
-            <span className="dislikes"> | Dislikes: {props.review.dislikes}</span>
+            <span className="dislikes">Dislikes: {props.review.dislikes}</span>
             <ThumbDown onClick={(event) => { props.changeLikeDislike(event, props.index, "dislikes") }}/>
           </Paper>
         </div>
