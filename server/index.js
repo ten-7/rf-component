@@ -66,10 +66,14 @@ app.get('/api/reviews/dbmerge', (req, res) => {
     if (err) {
       console.error(err);
     } else {
-      res.send(results);
+      res.send(JSON.stringify(results))
     }
   })
   res.end();
+})
+
+app.get('/api/reviews/getAllReviews', (req, res) => {
+  res.end()
 })
 
 app.listen(port, (err, result) => {
