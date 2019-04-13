@@ -65,14 +65,15 @@ app.get('/api/reviews/dbmerge', (req, res) => {
   db.getAllReviews((err, results) => {
     if (err) {
       console.error(err);
+      res.end()
     } else {
       res.send(JSON.stringify(results))
     }
   })
-  res.end();
 })
 
 app.get('/api/reviews/getAllReviews', (req, res) => {
+
   res.end()
 })
 
