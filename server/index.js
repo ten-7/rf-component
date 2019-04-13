@@ -1,8 +1,7 @@
 const express = require('express');
 const db = require('../database/db.js');
 const cors = require('cors');
-const fs = require('fs');
-const path = require('path');
+const axios = require('axios');
 
 const app = express();
 
@@ -72,8 +71,23 @@ app.get('/api/reviews/dbmerge', (req, res) => {
   })
 })
 
-app.get('/api/reviews/getAllReviews', (req, res) => {
-
+app.get('/api/reviews/ergeReviews', (req, res) => {
+  axios.get('http://18.224.213.59/api/allreviews')
+    .then((results) => {
+      console.log(results.data);
+      for(let document of results.data) {
+        db.postReview(document, (err, res) => {
+          if (err) {
+            console.error(error)
+          } else {
+            console.log('success!')
+          }
+        })
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    })
   res.end()
 })
 
