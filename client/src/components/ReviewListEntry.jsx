@@ -5,17 +5,7 @@ import ThumbUp from '@material-ui/icons/ThumbUp';
 import { Grid, Paper } from '@material-ui/core';
 
 const ReviewListEntry = (props) => {
-  let id = `entry${props.index}`
-  // return (
-  //   <div id={id} className="entry">
-
-  //       <br />
-
-  //       <br />
-
-  //     <hr className="component-div"/>
-  //   </div>
-  // );
+  let id = `entry${props.index}`;
 
   return (
     <div id={id} className="entry">
@@ -23,21 +13,23 @@ const ReviewListEntry = (props) => {
       <Grid item xs={3}>
         <Paper>
         <div>
-        <span className="user">{props.review.username}</span>
-        <span> | <StarRatings 
-                    rating={props.review.score} 
-                    starRatedColor="orange"
-                    starDimension="20px"/>
-        </span>
+          <Paper style={{height: "25px"}}>
+            <span className="user">{props.review.username}</span>
+            <span> | <StarRatings 
+                        rating={props.review.score} 
+                        starRatedColor="orange"
+                        starDimension="20px"/>
+            </span>
+          </Paper>
         </div>
         <div>
           <Paper>
             <span className="likes">Likes: {props.review.likes}</span>
-            <ThumbUp onClick={(event) => { props.changeLikeDislike(event, props.index, "likes") }} />
+            <ThumbUp style={{height: "15", width: "15", justifySelf: "right"}} onClick={(event) => { props.changeLikeDislike(event, props.index, "likes") }} />
           </Paper>
           <Paper>
             <span className="dislikes">Dislikes: {props.review.dislikes}</span>
-            <ThumbDown onClick={(event) => { props.changeLikeDislike(event, props.index, "dislikes") }}/>
+            <ThumbDown style={{height: "15", width: "15"}} onClick={(event) => { props.changeLikeDislike(event, props.index, "dislikes") }}/>
           </Paper>
         </div>
         </Paper>
