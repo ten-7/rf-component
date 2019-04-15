@@ -44,7 +44,6 @@
   width: 100%;
 }
 
-
 .subcomment-div {
   width: 15%;
   align-items: left;
@@ -73,4 +72,8 @@
 
 .likes-count {
   margin-left: 10px
+}
+
+.input {
+  font-size: 1em;
 }

@@ -86,7 +86,7 @@ class NewReviewInput extends React.Component {
             <Paper style={{height: '136px'}}>
               <div className="input-div">
               <br />
-              <input name="username" placeholder="Your Name" onChange={event => this.handleChange(event)}></input>
+              <input name="username" className="input" placeholder="Your Name" onChange={event => this.handleChange(event)}></input>
               <span> Score: </span>
               <StarRatings rating={this.state.score} 
                           starRatedColor="orange" 
@@ -96,7 +96,7 @@ class NewReviewInput extends React.Component {
                           name='score'
                           starDimension="20px"/>
               <br />
-              <textarea style={{width: "35.5vw", height: "85px", resize: "none"}} name="body" placeholder="Write a Review" onChange={event => this.handleChange(event)}></textarea>
+              <textarea className="input" style={{width: "35.5vw", height: "85px", resize: "none"}} name="body" placeholder="Write a Review" onChange={event => this.handleChange(event)}></textarea>
               </div>
             </Paper>
           </Grid>
