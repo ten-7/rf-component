@@ -37,7 +37,9 @@
 }
 
 .input-div {
-  margin-left: 20px;
+  margin-left: 2.5%;
+  width: 95%;
+  position: relative;
 }
 
 .component-div {
