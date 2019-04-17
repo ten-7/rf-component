@@ -8,7 +8,7 @@ module.exports = {
       user: 'ubuntu',
       host: '18.216.12.227',
       key: '~/.ssh/FEC-ryden.pem',
-      ref: 'origin/test',
+      ref: 'origin/master',
       repo: 'https://github.com/ten-7/rf-component',
       path: '/home/ubuntu/comp',
       'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
