@@ -8,9 +8,9 @@ module.exports = {
       user: 'ubuntu',
       host: '18.216.12.227',
       key: '~/.ssh/FEC-ryden.pem',
-      ref: 'origin/master',
+      ref: 'origin/test',
       repo: 'https://github.com/ten-7/rf-component',
-      path: '/home/ubuntu/AXE-Reviews',
+      path: '/home/ubuntu',
       'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
     }
   }
