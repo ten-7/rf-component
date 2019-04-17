@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-const uri = `mongodb+srv://Aikeus:${process.env.MONGO_PW}@cluster0-wp7g3.mongodb.net/Reviews?retryWrites=true`;
-mongoose.connect(uri, {useNewUrlParser: true});
+// const uri = `mongodb+srv://Aikeus:${process.env.MONGO_PW}@cluster0-wp7g3.mongodb.net/Reviews?retryWrites=true`;
+// mongoose.connect(uri, {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, "Database connection error"));

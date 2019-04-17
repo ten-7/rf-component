@@ -50,7 +50,7 @@ const ReviewListEntry = (props) => {
         </div>
       </Grid>
     </Grid>
-    <hr classname="component-div" />
+    <hr className="component-div" />
     </div>
   )
 }

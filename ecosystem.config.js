@@ -6,11 +6,11 @@ module.exports = {
   deploy: {
     production: {
       user: 'ubuntu',
-      host: '18.219.116.84',
-      key: '~/.ssh/AWS/JBeckerFEC.pem',
+      host: '18.216.12.227',
+      key: '~/.ssh/FEC-ryden.pem',
       ref: 'origin/master',
-      repo: 'https://github.com/axe-center/JB-Review-Component.git',
-      path: '/home/ubuntu/ReviewComponent',
+      repo: 'https://github.com/ten-7/rf-component',
+      path: '/home/ubuntu/AXE-Reviews',
       'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
     }
   }
