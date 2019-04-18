@@ -6,6 +6,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import '../styles.css';
 
+const host = 'localhost:3000';
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -37,7 +39,7 @@ class App extends React.Component {
       })
     })
 
-    axios.get('/api/reviews/reviews', {
+    axios.get(host + '/api/reviews/reviews', {
       params: {
         productId: this.state.productId
       }
@@ -59,7 +61,7 @@ class App extends React.Component {
 
     updatedReviews[reviewId][type]++;
 
-    axios.put("/api/reviews/update", updatedReviews[reviewId])
+    axios.put(host + '/api/reviews/update', updatedReviews[reviewId])
       .then((result) => {
         this.setState({
           reviews: updatedReviews
@@ -83,7 +85,7 @@ class App extends React.Component {
     newReview.dislikes = 0;
     newReview.productId = this.state.productId;
 
-    axios.post('/reviews/postReview', newReview)
+    axios.post(host + 'api/reviews/postReview', newReview)
       .then((response) => {
         const updatedReviews = this.state.reviews;
         updatedReviews.unshift(newReview);
