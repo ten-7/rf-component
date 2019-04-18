@@ -72,7 +72,7 @@ app.get('/api/reviews/dbmerge', (req, res) => {
 })
 
 app.get('/api/reviews/ergeReviews', (req, res) => {
-  axios.get('http://18.224.213.59/api/allreviews')
+  axios.get('/api/allreviews')
     .then((results) => {
       console.log(results.data);
       for(let document of results.data) {

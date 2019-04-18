@@ -1,6 +1,9 @@
 // INSERT INTO INITIAL GET REQUEST
 
-fs.readFile(path.join(__dirname, "../dummydata.json"), (error, data) => {
+const fs = require('fs');
+const db = require('../database/db.js')
+
+fs.readFile("../dummydata.json", (error, data) => {
   if (error) {
     console.error(error)
   } else {
