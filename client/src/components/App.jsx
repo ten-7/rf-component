@@ -10,15 +10,15 @@ const host = 'localhost:3000';
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       productId: 1,
       reviews: [],
-    }
+    };
   }
 
   componentDidMount() {
-    window.productId
+    window.productId;
     window.addEventListener('productId', (e) => {
       this.setState({
         productId: e.detail
@@ -36,8 +36,8 @@ class App extends React.Component {
           .catch((error) => {
             console.error(error);
           });
-      })
-    })
+      });
+    });
 
     axios.get(host + '/api/reviews/reviews', {
       params: {
@@ -65,11 +65,11 @@ class App extends React.Component {
       .then((result) => {
         this.setState({
           reviews: updatedReviews
-        })
+        });
       })
       .catch((error) => {
-        alert('something went wrong!')
-      })
+        alert('something went wrong!');
+      });
   }
 
   handleChange (event) {
@@ -108,7 +108,7 @@ class App extends React.Component {
           justify='space-evenly'
           direction='column'
           spacing={8}
-          >
+        >
           <NewReviewInput postReview={this.postReview.bind(this)}/>
           <ReviewList reviews={this.state.reviews} changeLikeDislike={this.incrementLikesAndDislikes.bind(this)}/>
         </Grid>
@@ -122,14 +122,14 @@ class App extends React.Component {
           direction='column'
           spacing={8}
           style={{
-            textAlign: "center"
+            textAlign: 'center'
           }}
-          >
+        >
           <NewReviewInput postReview={this.postReview.bind(this)}/>
           <div className="reviewList">Nothing here yet!</div>
         </Grid>
       </div>
-    )
+    );
   }
 }
 

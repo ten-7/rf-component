@@ -28,3 +28,7 @@ build/
 
 # notes
 notes.md
+
+# generated files
+
+*.csv
