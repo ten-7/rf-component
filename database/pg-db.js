@@ -1,38 +1,33 @@
-const { Pool } = require('pg');
-require('dotenv').config({ path: '../.env' });
+const db = require('./pg-db-config.js');
 
-const config = {
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  max:  process.env.POOL_MAX,
-  database: process.env.DB,
-  idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000
+const getReviewsByProductId = (selectedId, callback) => {
+  console.log(selectedId)
+  const inquery = `SELECT * FROM public.reviews WHERE productId = ${selectedId} LIMIT 5;`;
+
+  db.query(inquery, (err, result) => {
+    if (err) throw err;
+    else {
+      console.log('here we go!', result.rows[0])
+      callback(null, result.rows);
+    }
+  });
 }
 
-console.log(config.user, config.password)
+const getAllReviews = (callback) => {
+  const inquery = `SELECT * FROM public.reviews LIMIT 100`;
 
-const pool = new Pool(config);
-
-pool.connect((err) => {
-  if (err) console.log(err);
-  else {
-    console.log('success!');
-  }
-})
-
-pool.getOne = function(){
-  const querystring = `SELECT * FROM public.reviews LIMIT 1;`
-  pool.query(querystring, (err, data) => {
-    if (err) console.log('error output: ', err.stack);
+  db.query(inquery, (err, result) => {
+    if (err) throw err;
     else {
-      console.log(data.rows);
+      callback(result);
     }
-  })
-};
+  });
+}
 
-pool.getReviewsByProductId = function(selectedId, callback){
-  const querystring = `SELECT `
-};
+// const postReview = (content, callback) => {
+//   const inquery = `INSERT INTO public.reviews VALUES (
+//     content.
+//   )`
+// }
+
+module.exports = { getReviewsByProductId, getAllReviews };

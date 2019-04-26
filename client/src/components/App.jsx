@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: 1,
+      productId: 4,
       reviews: [],
     };
   }
@@ -39,7 +39,7 @@ class App extends React.Component {
       });
     });
 
-    axios.get(host + '/api/reviews/reviews', {
+    axios.get('/api/reviews/reviews', {
       params: {
         productId: this.state.productId
       }

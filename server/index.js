@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('../database/db.js');
+const db = require('../database/pg-db.js');
 const cors = require('cors');
 const axios = require('axios');
 
@@ -9,10 +9,11 @@ app.use(express.static('dist'))
 app.use(express.json());
 app.use(cors());
 
-let port = process.env.PORT || 3000;
+let port = 3000;
 
 app.get('/api/reviews/reviews', (req, res) => {
   // req.query.productId
+  // console.log(req.query)
   db.getReviewsByProductId(req.query.productId, (error, results) => {
     if (error) {
       console.error(error);
